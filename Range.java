@@ -1,7 +1,11 @@
 import java.util.NoSuchElementException;
+// import java.util.IllegalArgumentException;
 public class Range implements IntegerSequence{
   private int start,end,current;
   public Range(int start,  int end){
+    if (end < start) {
+      throw new IllegalArgumentException("End cannot be less than  start");
+    }
     this.start = start;
     this.end = end;
     this.current = start;
