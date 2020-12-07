@@ -13,7 +13,7 @@ public class Range implements IntegerSequence{
     return (this.end-this.start+1);
   }
   public boolean hasNext(){
-    if (this.current == this.end) {
+    if (this.current == this.end+1) {
       return false;
     }
     return true;
@@ -22,7 +22,7 @@ public class Range implements IntegerSequence{
   //@throws NoSuchElementException
   public int next(){
     int temporary = this.current;
-    if (this.hasNext() == false) {
+    if (this.current == this.end+1) {
       throw new NoSuchElementException("The current element of the sequence, " + this.current + " is the last of the range");
     }
     this.current ++;
