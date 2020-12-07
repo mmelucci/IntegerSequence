@@ -21,7 +21,11 @@ public class Range implements IntegerSequence{
 
   //@throws NoSuchElementException
   public int next(){
-    return 1;
+    int temporary = this.current;
+    if (this.hasNext() == false) {
+      throw new NoSuchElementException("The current element of the sequence, " + this.current + " is the last of the range");
+    }
+    this.current ++;
+    return temporary;
   }
-
 }
